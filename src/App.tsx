@@ -751,7 +751,7 @@ function Token() {
   );
 }
 
-const DOCS = "https://agent-circle.mintlify.site";
+const DOCS = "https://agentscircle.udokaam.dev";
 
 const FOOTER_COLS = [
   {
