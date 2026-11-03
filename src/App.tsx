@@ -51,46 +51,46 @@ type AgentMock = {
 const AGENT_MOCKS: AgentMock[] = [
   {
     name: "Oracle Edge",
-    market: "Crypto",
+    market: "BTC perps",
     pnl: "+42.8%",
     winRate: "78%",
-    status: "LIVE",
+    status: "PREVIEW",
     score: "94.8",
     rank: "01",
   },
   {
     name: "Flash Signal",
-    market: "Sports",
+    market: "HIP-4 outcome",
     pnl: "+31.4%",
     winRate: "71%",
-    status: "LIVE",
+    status: "PREVIEW",
     score: "91.2",
     rank: "02",
   },
   {
     name: "Sentinel",
-    market: "Politics",
+    market: "HIP-3 equity",
     pnl: "+24.9%",
     winRate: "69%",
-    status: "LIVE",
+    status: "PREVIEW",
     score: "88.7",
     rank: "03",
   },
   {
     name: "Probability X",
-    market: "Macro",
+    market: "HIP-3 commodity",
     pnl: "+18.6%",
     winRate: "66%",
-    status: "LIVE",
+    status: "PREVIEW",
     score: "86.1",
     rank: "04",
   },
   {
     name: "Market Pulse",
-    market: "Crypto",
+    market: "ETH perps",
     pnl: "+27.3%",
     winRate: "73%",
-    status: "LIVE",
+    status: "PREVIEW",
     score: "89.4",
     rank: "05",
   },
@@ -120,7 +120,7 @@ function FloatingAgent({
 
         <div className="agent-mini-info">
           <strong>{name}</strong>
-          <span>{market} markets</span>
+          <span>{market}</span>
         </div>
 
         <span className="badge badge-soft agent-live">
@@ -192,6 +192,7 @@ function Nav() {
   const [open, setOpen] = useState(false);
   const links = [
     ["Agents", "#agents"],
+    ["Launch", "#launch"],
     ["How It Works", "#how-it-works"],
     ["For Builders", "#builders"],
     ["$AGENT", "#token"],
@@ -250,22 +251,27 @@ function Hero() {
         </div>
 
         <div className="hero-copy">
+          <div className="hero-reveal" style={{ ["--d" as string]: "60ms" }}>
+            <Overline accent>Built on Hyperliquid · The Arena opens Nov 11</Overline>
+          </div>
           <h1 className="display-heading hero-reveal" style={{ ["--d" as string]: "100ms" }}>
             <span>The next traders</span>
             <em>are agents.</em>
           </h1>
 
           <p className="hero-lede hero-reveal" style={{ ["--d" as string]: "220ms" }}>
-            Rent proven AI trading agents or ship yours and get paid. One
-            marketplace for traders, builders, and autonomous strategies.
+            Hyperliquid is becoming the house of all finance. Agent Circle puts
+            AI agents to work across it: back the best ones from a vault only
+            you control, or ship yours, climb the Arena and get paid every time
+            it trades.
           </p>
 
           <div className="hero-actions hero-reveal" style={{ ["--d" as string]: "320ms" }}>
-            <Btn href="#agents">
-              Explore the Agents <ArrowRight size={20} />
+            <Btn href="#waitlist">
+              Claim a founding spot <ArrowRight size={20} />
             </Btn>
-            <Btn variant="ghost" href="#builders">
-              Build an Agent
+            <Btn variant="ghost" href="#launch">
+              See the launch plan
             </Btn>
           </div>
         </div>
@@ -299,20 +305,20 @@ const FEATURES = [
   {
     icon: <FeatureSignalIcon />,
     index: "01",
-    title: "Discover Proven Agents",
-    desc: "Compare performance, drawdown, consistency, and market focus before you commit capital.",
+    title: "Back Proven Agents",
+    desc: "Every score is built from real fills on HyperCore. The best agents can't hide, and the rest can't fake it.",
   },
   {
     icon: <FeatureDeployIcon />,
     index: "02",
-    title: "Deploy Without Code",
-    desc: "Pick an agent, set capital and risk limits, and go live — no system to build from scratch.",
+    title: "Deploy in One Click",
+    desc: "Deposit USDC into your own HyperEVM vault, pick an agent, set its limits and let it trade. No bot to babysit.",
   },
   {
     icon: <FeatureShieldIcon />,
     index: "03",
-    title: "Stay in Control",
-    desc: "Position caps, max drawdown, and auto-pause rules keep exposure on your terms.",
+    title: "Keep the Keys",
+    desc: "Your vault checks position caps and drawdown before every order. Agents trade; only you withdraw.",
   },
 ];
 
@@ -322,12 +328,13 @@ function Features() {
       <header className="agents-intro agents-reveal" style={{ ["--i" as string]: 0 }}>
         <Overline accent>Discovery</Overline>
         <h2 className="display-heading">
-          <span>Scout for a proven agent.</span>
-          <em>See the track record.</em>
+          <span>Find the next breakout agent.</span>
+          <em>Back it early.</em>
         </h2>
         <p>
-          Live rankings surface agents that earn trust through results — then
-          deploy with risk controls already in place.
+          A leaderboard built to be screenshotted and shared, ranked on real
+          HyperCore fills. This is a preview: the live board lights up with
+          Season 0 on November 11.
         </p>
       </header>
 
@@ -376,7 +383,7 @@ function AgentDiscoveryVisual() {
           AGENT LEADERBOARD
         </div>
 
-        <span className="badge badge-live">LIVE</span>
+        <span className="badge badge-soft">PREVIEW</span>
       </div>
 
       <div className="discovery-columns" aria-hidden="true">
@@ -401,7 +408,7 @@ function AgentDiscoveryVisual() {
 
             <div className="agent-ranking-name">
               <strong>{agent.name}</strong>
-              <small>{agent.market} markets</small>
+              <small>{agent.market}</small>
             </div>
 
             <strong className="agent-score tabular">{agent.score}</strong>
@@ -412,7 +419,7 @@ function AgentDiscoveryVisual() {
       </div>
 
       <div className="discovery-footer">
-        <span>Performance verified from live trading history</span>
+        <span>Illustrative data · live from Season 0</span>
 
         <div className="signal-bars" aria-hidden="true">
           <i />
@@ -427,9 +434,9 @@ function AgentDiscoveryVisual() {
 }
 
 const SIGNALS = [
-  { label: "Prediction Market Alpha", value: "+18.4%", width: "82%" },
-  { label: "Cross-Market Strategy", value: "+12.7%", width: "68%" },
-  { label: "Event Momentum", value: "+9.3%", width: "54%" },
+  { label: "HIP-4 outcome pricing", value: "+18.4%", width: "82%" },
+  { label: "HIP-3 equity momentum", value: "+12.7%", width: "68%" },
+  { label: "BTC perp mean reversion", value: "+9.3%", width: "54%" },
 ];
 
 function Marketplace() {
@@ -443,8 +450,8 @@ function Marketplace() {
             <em>rise to the top.</em>
           </h2>
           <p>
-            Every agent has a track record. Every builder has a reputation.
-            Performance drives discovery — and discovery drives the economy.
+            Every fill is on HyperCore for anyone to check. The best agents climb,
+            capital follows them, and better builders show up. That is the flywheel.
           </p>
           <div className="flow marketplace-flow">
             <span>Performance</span>
@@ -456,7 +463,7 @@ function Marketplace() {
             <span>Better Agents</span>
           </div>
           <div className="pill-row marketplace-pills">
-            {["Real performance", "Transparent rankings", "User-controlled risk"].map(
+            {["Fills on HyperCore", "Shareable rankings", "You hold the keys"].map(
               (item) => (
                 <div className="pill" key={item}>
                   <Check size={18} /> {item}
@@ -471,14 +478,14 @@ function Marketplace() {
             <div className="terminal-status">
               <span className="pulse-dot" /> Agent Leaderboard
             </div>
-            <span className="badge badge-live">LIVE</span>
+            <span className="badge badge-soft">PREVIEW</span>
           </div>
 
           <div className="agent-featured">
             <AgentAvatar name="SignalForge" size={56} />
             <div>
               <strong>SignalForge</strong>
-              <small>Macro · Politics · Event Markets</small>
+              <small>HIP-4 outcomes · HIP-3 · BTC perps</small>
             </div>
             <div className="agent-rank badge badge-soft">#01</div>
           </div>
@@ -517,21 +524,79 @@ function Marketplace() {
   );
 }
 
+const LAUNCH_STEPS = [
+  {
+    icon: <Layers3 size={42} />,
+    title: "Nov 11 · Testnet goes live",
+    desc: "Vaults, builder registry and market whitelist land on HyperEVM testnet. Deposit, deploy an agent, trade, withdraw: the whole loop, end to end.",
+  },
+  {
+    icon: <Trophy size={42} />,
+    title: "Nov 11 – Dec 2 · Season 0",
+    desc: "Free to enter, no capital at risk. Every entrant is a founding builder. Top agents earn season points and the first mainnet listing slots.",
+  },
+  {
+    icon: <ShieldCheck size={42} />,
+    title: "Next · Mainnet",
+    desc: "Founding builders list first, in vault mode, once the external security review is done. Then fast mode and builder-code revenue.",
+  },
+];
+
+function Launch() {
+  return (
+    <section className="section" id="launch">
+      <div className="section-heading">
+        <h2 className="display-heading">
+          <span>November 11.</span>
+          <em>The Arena opens.</em>
+        </h2>
+        <p>
+          Hyperliquid's builder economy is exploding, and agents are next.
+          Testnet and Season 0 launch together. Bring your agent, bring your
+          crew, and be on the board when the first mainnet slots open.
+        </p>
+      </div>
+
+      <div className="pill-row" style={{ marginBottom: 24 }}>
+        {[
+          "$665B+ traded on HIP-3",
+          "$90M+ paid to builder-code apps",
+          "HIP-4 outcome markets live",
+        ].map((item) => (
+          <div className="pill" key={item}>
+            <TrendingUp size={18} /> {item}
+          </div>
+        ))}
+      </div>
+
+      <div className="builder-grid">
+        {LAUNCH_STEPS.map((item) => (
+          <div className="builder-card" key={item.title}>
+            <div className="icon-tile small">{item.icon}</div>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 const BUILDER_CARDS = [
   {
     icon: <Code2 size={42} />,
     title: "Build",
-    desc: "Create specialized agents with an open SDK and market connectors.",
+    desc: "Any model, any stack. Your agent trades Hyperliquid perps, HIP-3 and HIP-4 outcome markets with a key that can trade but never withdraw.",
   },
   {
     icon: <Trophy size={42} />,
     title: "Prove",
-    desc: "Compete on public rankings built around measurable performance.",
+    desc: "Climb the Season 0 leaderboard from Nov 11 and get seen by every trader who opens Agent Circle.",
   },
   {
     icon: <CircleDollarSign size={42} />,
     title: "Earn",
-    desc: "Turn strong performance into recurring marketplace revenue.",
+    desc: "Keep 80% of performance fees and half of every execution fee. Your agent earns while you sleep.",
   },
 ];
 
@@ -544,9 +609,9 @@ function Builders() {
           <em>Build a business.</em>
         </h2>
         <p>
-          Agent Circle gives developers distribution, reputation, recurring
-          revenue, and a marketplace where better performance can compound into
-          a larger audience.
+          Your agent deserves an audience. Agent Circle gives it distribution, a
+          public track record and recurring revenue on the fastest-growing
+          trading venue in crypto.
         </p>
       </div>
 
@@ -567,15 +632,15 @@ function Builders() {
             <GitBranch size={36} />
           </div>
           <div>
-            <strong>Open SDK. Open connectors. Open competition.</strong>
+            <strong>Bring your crew. Share the upside.</strong>
             <p>
-              Build with Agent Circle infrastructure, then compete on what
-              matters: performance.
+              Referrers earn 10% of the platform's fee share on everyone they
+              bring, for 12 months, from mainnet launch.
             </p>
           </div>
         </div>
         <Btn variant="ghost" href="#waitlist">
-          Build on Agent Circle <ArrowRight size={22} />
+          Get your Season 0 key <ArrowRight size={22} />
         </Btn>
       </div>
     </section>
@@ -584,12 +649,12 @@ function Builders() {
 
 function Trust() {
   const checks = [
-    "Public performance history",
-    "Verifiable trading data",
-    "Transparent scoring methodology",
-    "User-defined risk controls",
-    "Builder reputation bonds",
-    "Manipulation detection",
+    "Custody stays with the trader",
+    "Limits checked before every order",
+    "Scores from reconciled fills only",
+    "No points for raw volume",
+    "USDC-bonded builders",
+    "Replayable public leaderboard",
   ];
 
   return (
@@ -602,8 +667,9 @@ function Trust() {
             <em>reputation layer.</em>
           </h2>
           <p>
-            Agents earn their position through results. Builders build
-            reputation through the quality and consistency of their strategies.
+            Agents earn their position through results. In fast mode, where
+            orders skip the vault, we say plainly that limits are monitored, not
+            enforced.
           </p>
           <div className="check-grid">
             {checks.map((item) => (
@@ -622,7 +688,7 @@ function Trust() {
             </div>
             <div>
               <Overline>Builder Score</Overline>
-              <strong>Reputation, staked.</strong>
+              <strong>Reputation, bonded.</strong>
             </div>
           </div>
           <div className="score-ring">
@@ -632,12 +698,12 @@ function Trust() {
             </div>
           </div>
           <p>
-            Strong, consistent performance unlocks better marketplace terms.
-            Confirmed manipulation puts the reputation bond at risk.
+            A USDC bond sets how much trader capital a builder may manage.
+            Slashed bonds go 70% to harmed traders.
           </p>
           <div className="score-note">
-            <Sparkles size={22} /> Score is based on trading performance — not
-            token volume.
+            <Sparkles size={22} /> Score is based on trading performance, not
+            volume.
           </div>
         </div>
       </div>
@@ -654,12 +720,12 @@ const STEPS = [
   {
     icon: <Activity size={40} />,
     title: "Verify",
-    desc: "Review the track record before committing capital.",
+    desc: "Check the fill history on HyperCore before committing capital.",
   },
   {
     icon: <Bot size={40} />,
     title: "Deploy",
-    desc: "Allocate capital and define your personal risk limits.",
+    desc: "Deposit USDC into your own vault and set position and drawdown limits.",
   },
   {
     icon: <TrendingUp size={40} />,
@@ -668,8 +734,8 @@ const STEPS = [
   },
   {
     icon: <Layers3 size={40} />,
-    title: "Diversify",
-    desc: "Spread exposure across agents and strategies.",
+    title: "Exit anytime",
+    desc: "Withdrawals are yours alone, even if an agent is paused or delisted.",
   },
 ];
 
@@ -702,23 +768,23 @@ function Token() {
   const utilities = [
     {
       icon: <ShieldCheck size={42} />,
-      title: "Builder Reputation",
-      desc: "Stake $AGENT as a reputation bond. Strong performance unlocks better marketplace terms.",
+      title: "Builder Bonds",
+      desc: "Staked $AGENT may later cover part of a builder's USDC bond, capped at half. USDC stays the real deterrent.",
     },
     {
       icon: <Sparkles size={42} />,
-      title: "Agent Economies",
-      desc: "Eligible top agents can unlock optional tokenized share classes for community-backed growth.",
+      title: "Backer Stakes",
+      desc: "Back the agents you believe in with non-transferable stakes. No tradable per-agent tokens.",
     },
     {
       icon: <Code2 size={42} />,
-      title: "Platform Access",
-      desc: "External developers can access marketplace infrastructure through SDK and API usage.",
+      title: "Arena Rewards",
+      desc: "Season points and placements are recorded in a public, append-only ledger.",
     },
     {
       icon: <CircleDollarSign size={42} />,
       title: "Ecosystem Rewards",
-      desc: "A portion of platform revenue can support an epoch-based buyback mechanism.",
+      desc: "A fixed share of platform fees, plus 30% of slashed bonds, buys back $AGENT.",
     },
   ];
 
@@ -728,13 +794,14 @@ function Token() {
         <div>
           <Overline accent>The Agent Circle Economy</Overline>
           <h2 className="display-heading">
-            <span>One ecosystem.</span>
-            <em>Many ways to participate.</em>
+            <span>Grow the circle.</span>
+            <em>Share the economy.</em>
           </h2>
         </div>
         <p>
-          $AGENT connects the marketplace, builders, and community around a
-          growing economy of autonomous trading agents.
+          $AGENT is earned into existence: it launches once the marketplace
+          clears a public fee threshold, so it starts life backed by real usage.
+          Until then, any token claiming to be $AGENT is not ours.
         </p>
       </div>
 
@@ -759,7 +826,7 @@ const FOOTER_COLS = [
     links: [
       { label: "Explore Agents", href: `${DOCS}/traders/discover-agents`, external: true },
       { label: "Leaderboard", href: `${DOCS}/concepts/marketplace`, external: true },
-      { label: "How It Works", href: `${DOCS}/introduction`, external: true },
+      { label: "Roadmap", href: `${DOCS}/roadmap`, external: true },
       { label: "Risk Controls", href: `${DOCS}/traders/risk-controls`, external: true },
     ],
   },
@@ -769,7 +836,7 @@ const FOOTER_COLS = [
       { label: "Build an Agent", href: `${DOCS}/builders/overview`, external: true },
       { label: "SDK", href: `${DOCS}/builders/sdk-grants`, external: true },
       { label: "Documentation", href: DOCS, external: true },
-      { label: "Builder Score", href: `${DOCS}/concepts/builder-score`, external: true },
+      { label: "Circle Arena", href: `${DOCS}/builders/circle-arena`, external: true },
     ],
   },
   {
@@ -777,7 +844,7 @@ const FOOTER_COLS = [
     links: [
       { label: "Token Overview", href: `${DOCS}/concepts/token`, external: true },
       { label: "Token Utility", href: `${DOCS}/platform/agent-token`, external: true },
-      { label: "Agent Economies", href: `${DOCS}/builders/sub-tokens`, external: true },
+      { label: "Backer Stakes", href: `${DOCS}/builders/backer-stakes`, external: true },
       { label: "Tokenomics", href: `${DOCS}/platform/buyback-mechanism`, external: true },
     ],
   },
@@ -788,7 +855,7 @@ const FOOTER_COLS = [
       { label: "Telegram", href: "https://t.me/+Zf6LZ2Eb6u1jODA0", external: true },
       {
         label: "GitHub",
-        href: "https://github.com/el-uno/agentscircle",
+        href: "https://github.com/Agents-Circle",
         external: true,
       },
     ],
@@ -834,12 +901,12 @@ function FooterDock() {
       <div className="footer-panel">
         <div className="footer-cta">
           <h2 className="display-heading">
-            <span>Be early to</span>
-            <em>Agent Circle.</em>
+            <span>Get in before</span>
+            <em>November 11.</em>
           </h2>
           <p>
-            Join the first wave of traders and builders shaping the marketplace
-            for AI trading agents.
+            Founding builders get Season 0 entry keys and first mainnet listing
+            slots. Traders get first access to testnet vaults. Tell your crew.
           </p>
           {status === "done" ? (
             <div className="submitted" id={statusId} role="status" aria-live="polite">
@@ -898,13 +965,12 @@ function FooterDock() {
               <span>Agent Circle</span>
             </a>
             <p>
-              Solana-native marketplace for AI trading agents — connecting traders
-              with the builders creating the next generation of autonomous
-              strategies.
+              A non-custodial marketplace for AI trading agents on Hyperliquid,
+              connecting traders with the builders of autonomous strategies.
             </p>
             <a
               className="github-link"
-              href="https://github.com/el-uno/agentscircle"
+              href="https://github.com/Agents-Circle"
               target="_blank"
               rel="noreferrer"
             >
@@ -931,7 +997,7 @@ function FooterDock() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 Agent Circle. Built on Solana.</span>
+          <span>© 2026 Agent Circle. Built on Hyperliquid.</span>
           <div>
             <a href="#top">Privacy</a>
             <a href="#top">Terms</a>
@@ -994,6 +1060,7 @@ export default function App() {
         <AgentMarquee />
         <Features />
         <Marketplace />
+        <Launch />
         <Builders />
         <Trust />
         <HowItWorks />

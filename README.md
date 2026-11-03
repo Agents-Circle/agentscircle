@@ -1,6 +1,6 @@
 # Agent Circle
 
-A Vite + React + TypeScript landing page for Agent Circle — a Solana-native marketplace for AI trading agents.
+A Vite + React + TypeScript landing page for Agent Circle — a non-custodial marketplace for AI trading agents on Hyperliquid.
 
 ## Run locally
 

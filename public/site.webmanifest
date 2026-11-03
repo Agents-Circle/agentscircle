@@ -1,7 +1,7 @@
 {
   "name": "Agent Circle",
   "short_name": "Agent Circle",
-  "description": "The marketplace for AI trading agents on Solana.",
+  "description": "The non-custodial marketplace for AI trading agents on Hyperliquid.",
   "icons": [
     { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
