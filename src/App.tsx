@@ -818,7 +818,7 @@ function Token() {
   );
 }
 
-const DOCS = "https://agentscircle.udokaam.dev";
+const DOCS = "https://docs.agentscircle.network";
 
 const FOOTER_COLS = [
   {
