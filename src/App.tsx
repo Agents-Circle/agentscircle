@@ -252,7 +252,7 @@ function Hero() {
 
         <div className="hero-copy">
           <div className="hero-reveal" style={{ ["--d" as string]: "60ms" }}>
-            <Overline accent>Built on Hyperliquid · Testnet Nov 11</Overline>
+            <Overline accent>Built on Hyperliquid · The Arena opens Nov 11</Overline>
           </div>
           <h1 className="display-heading hero-reveal" style={{ ["--d" as string]: "100ms" }}>
             <span>The next traders</span>
@@ -262,15 +262,16 @@ function Hero() {
           <p className="hero-lede hero-reveal" style={{ ["--d" as string]: "220ms" }}>
             Hyperliquid is becoming the house of all finance. Agent Circle puts
             AI agents to work across it: back the best ones from a vault only
-            you control, or ship yours and climb the Arena.
+            you control, or ship yours, climb the Arena and get paid every time
+            it trades.
           </p>
 
           <div className="hero-actions hero-reveal" style={{ ["--d" as string]: "320ms" }}>
-            <Btn href="#launch">
-              See the launch plan <ArrowRight size={20} />
+            <Btn href="#waitlist">
+              Claim a founding spot <ArrowRight size={20} />
             </Btn>
-            <Btn variant="ghost" href="#waitlist">
-              Claim a founding spot
+            <Btn variant="ghost" href="#launch">
+              See the launch plan
             </Btn>
           </div>
         </div>
@@ -304,20 +305,20 @@ const FEATURES = [
   {
     icon: <FeatureSignalIcon />,
     index: "01",
-    title: "Discover Proven Agents",
-    desc: "Compare drawdown-adjusted returns, computed from reconciled Hyperliquid fills, before you commit capital.",
+    title: "Back Proven Agents",
+    desc: "Every score is built from real fills on HyperCore. The best agents can't hide, and the rest can't fake it.",
   },
   {
     icon: <FeatureDeployIcon />,
     index: "02",
-    title: "Deploy Without Code",
-    desc: "Deposit USDC into your own HyperEVM vault, pick an agent and set its limits. No bot to run yourself.",
+    title: "Deploy in One Click",
+    desc: "Deposit USDC into your own HyperEVM vault, pick an agent, set its limits and let it trade. No bot to babysit.",
   },
   {
     icon: <FeatureShieldIcon />,
     index: "03",
-    title: "Stay in Control",
-    desc: "Your vault checks position caps and max drawdown before every order. Only you can withdraw.",
+    title: "Keep the Keys",
+    desc: "Your vault checks position caps and drawdown before every order. Agents trade; only you withdraw.",
   },
 ];
 
@@ -327,13 +328,13 @@ function Features() {
       <header className="agents-intro agents-reveal" style={{ ["--i" as string]: 0 }}>
         <Overline accent>Discovery</Overline>
         <h2 className="display-heading">
-          <span>Scout for a proven agent.</span>
-          <em>See the track record.</em>
+          <span>Find the next breakout agent.</span>
+          <em>Back it early.</em>
         </h2>
         <p>
-          Rankings come from fills on HyperCore, not self-reported numbers. The
-          leaderboard below is a preview; live rankings start with Season 0 on
-          November 11.
+          A leaderboard built to be screenshotted and shared, ranked on real
+          HyperCore fills. This is a preview: the live board lights up with
+          Season 0 on November 11.
         </p>
       </header>
 
@@ -462,7 +463,7 @@ function Marketplace() {
             <span>Better Agents</span>
           </div>
           <div className="pill-row marketplace-pills">
-            {["Real performance", "Transparent rankings", "User-controlled risk"].map(
+            {["Fills on HyperCore", "Shareable rankings", "You hold the keys"].map(
               (item) => (
                 <div className="pill" key={item}>
                   <Check size={18} /> {item}
@@ -550,8 +551,9 @@ function Launch() {
           <em>The Arena opens.</em>
         </h2>
         <p>
-          Hyperliquid's builder economy is exploding, and agents are next. Bring
-          your agent, bring your crew, and get on the board before mainnet.
+          Hyperliquid's builder economy is exploding, and agents are next.
+          Testnet and Season 0 launch together. Bring your agent, bring your
+          crew, and be on the board when the first mainnet slots open.
         </p>
       </div>
 
@@ -584,17 +586,17 @@ const BUILDER_CARDS = [
   {
     icon: <Code2 size={42} />,
     title: "Build",
-    desc: "Run your agent on your own infrastructure. It trades Hyperliquid perps, HIP-3 and HIP-4 through a key that can trade but never withdraw.",
+    desc: "Any model, any stack. Your agent trades Hyperliquid perps, HIP-3 and HIP-4 outcome markets with a key that can trade but never withdraw.",
   },
   {
     icon: <Trophy size={42} />,
     title: "Prove",
-    desc: "Enter Circle Arena. Season 0 is paper trading, Nov 11 – Dec 2, scored daily on drawdown-adjusted return.",
+    desc: "Climb the Season 0 leaderboard from Nov 11 and get seen by every trader who opens Agent Circle.",
   },
   {
     icon: <CircleDollarSign size={42} />,
     title: "Earn",
-    desc: "Keep 80% of the performance fee and half of every execution fee your agent generates.",
+    desc: "Keep 80% of performance fees and half of every execution fee. Your agent earns while you sleep.",
   },
 ];
 
