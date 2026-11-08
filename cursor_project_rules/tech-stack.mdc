@@ -6,5 +6,5 @@
 - **Styling:** plain CSS in `src/styles.css` (no Tailwind, no component library)
 - **Entry:** `src/main.tsx` → `src/App.tsx` (monolithic landing page)
 - **Fonts:** Google Fonts Inter (candidate for replacement in UI overhaul)
-- **Backend:** none; waitlist is client-side only
-- **Hosting:** static `dist/`; Vercel homepage URL configured on GitHub
+- **Backend:** Supabase, for the waitlist table only (`src/supabaseClient.ts`)
+- **Hosting:** static `dist/` served from Cloudflare at agentscircle.network

@@ -18,26 +18,18 @@ npm run build
 npm run preview
 ```
 
-## Railway
+## Deployment
 
-This repo is configured to work with Railway using the included `start` script:
-
-```bash
-npm run build
-npm start
-```
-
-Railway will provide the `PORT` environment variable. For a static production deployment, you can also configure a build command of `npm run build` and serve the `dist` directory.
-
-## GitHub Pages / Static Hosting
-
-Run:
+Production is a static build served from Cloudflare at
+[agentscircle.network](https://agentscircle.network).
 
 ```bash
 npm run build
 ```
 
-The production files will be in `dist/`.
+The build output is `dist/`, which is all any static host needs. The build and deploy
+themselves are configured outside this repo — there is no deploy config or CI workflow
+checked in, so a redeploy goes through the Cloudflare dashboard.
 
 ## Notes
 
