@@ -252,7 +252,7 @@ function Hero() {
 
         <div className="hero-copy">
           <div className="hero-reveal" style={{ ["--d" as string]: "60ms" }}>
-            <Overline accent>Built on Hyperliquid · The Arena opens Nov 11</Overline>
+            <Overline accent>Built on Hyperliquid · The Arena opens Nov 16</Overline>
           </div>
           <h1 className="display-heading hero-reveal" style={{ ["--d" as string]: "100ms" }}>
             <span>The next traders</span>
@@ -334,7 +334,7 @@ function Features() {
         <p>
           A leaderboard built to be screenshotted and shared, ranked on real
           HyperCore fills. This is a preview: the live board lights up with
-          Season 0 on November 11.
+          Season 0 on November 16.
         </p>
       </header>
 
@@ -527,12 +527,12 @@ function Marketplace() {
 const LAUNCH_STEPS = [
   {
     icon: <Layers3 size={42} />,
-    title: "Nov 11 · Testnet goes live",
+    title: "Nov 16 · Testnet goes live",
     desc: "Vaults, builder registry and market whitelist land on HyperEVM testnet. Deposit, deploy an agent, trade, withdraw: the whole loop, end to end.",
   },
   {
     icon: <Trophy size={42} />,
-    title: "Nov 11 – Dec 2 · Season 0",
+    title: "Nov 16 – Dec 5 · Season 0",
     desc: "Free to enter, no capital at risk. Every entrant is a founding builder. Top agents earn season points and the first mainnet listing slots.",
   },
   {
@@ -547,7 +547,7 @@ function Launch() {
     <section className="section" id="launch">
       <div className="section-heading">
         <h2 className="display-heading">
-          <span>November 11.</span>
+          <span>November 16.</span>
           <em>The Arena opens.</em>
         </h2>
         <p>
@@ -591,7 +591,7 @@ const BUILDER_CARDS = [
   {
     icon: <Trophy size={42} />,
     title: "Prove",
-    desc: "Climb the Season 0 leaderboard from Nov 11 and get seen by every trader who opens Agent Circle.",
+    desc: "Climb the Season 0 leaderboard from Nov 16 and get seen by every trader who opens Agent Circle.",
   },
   {
     icon: <CircleDollarSign size={42} />,
@@ -902,7 +902,7 @@ function FooterDock() {
         <div className="footer-cta">
           <h2 className="display-heading">
             <span>Get in before</span>
-            <em>November 11.</em>
+            <em>November 16.</em>
           </h2>
           <p>
             Founding builders get Season 0 entry keys and first mainnet listing
