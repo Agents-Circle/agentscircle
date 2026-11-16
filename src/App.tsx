@@ -191,6 +191,7 @@ function LogoIcon({ size = 36 }: { size?: number }) {
 function Nav() {
   const [open, setOpen] = useState(false);
   const links = [
+    ["Season 0", "/season-0/"],
     ["Agents", "#agents"],
     ["Launch", "#launch"],
     ["How It Works", "#how-it-works"],
@@ -208,7 +209,13 @@ function Nav() {
 
       <div className={`nav-links ${open ? "open" : ""}`} id="primary-nav">
         {links.map(([label, href]) => (
-          <a key={label} href={href} onClick={() => setOpen(false)}>
+          <a
+            key={label}
+            href={href}
+            onClick={() => setOpen(false)}
+            className={href.startsWith("/season-0") ? "nav-season" : undefined}
+          >
+            {href.startsWith("/season-0") && <span className="nav-live-dot" aria-hidden="true" />}
             {label}
           </a>
         ))}

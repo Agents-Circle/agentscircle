@@ -1871,3 +1871,9 @@ button:disabled, .btn:disabled { cursor: not-allowed; }
     filter: none;
   }
 }
+
+/* Season 0 nav link: a live dot so the season stands out in the navbar. */
+.nav-links a.nav-season { display: inline-flex; align-items: center; gap: 8px; color: #fff; }
+.nav-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #3ddc97; box-shadow: 0 0 0 0 rgba(61, 220, 151, 0.6); animation: nav-live 1.8s infinite; }
+@keyframes nav-live { 70% { box-shadow: 0 0 0 8px rgba(61, 220, 151, 0); } 100% { box-shadow: 0 0 0 0 rgba(61, 220, 151, 0); } }
+@media (prefers-reduced-motion: reduce) { .nav-live-dot { animation: none; } }
