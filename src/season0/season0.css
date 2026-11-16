@@ -165,11 +165,11 @@ img { display: block; }
 .s0-board-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; align-items: start; }
 .s0-board { padding: 8px 8px 16px; }
 .s0-table { display: grid; }
-.s0-tr { display: grid; grid-template-columns: 48px 1.6fr 0.9fr 0.8fr 0.9fr 1fr; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 14px; font-size: 14px; animation: s0-row-in 0.7s var(--s0-ease) both; }
+.s0-tr { display: grid; grid-template-columns: 48px minmax(0, 1.7fr) 0.8fr 0.8fr 0.8fr 0.9fr 1fr; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 14px; font-size: 14px; animation: s0-row-in 0.7s var(--s0-ease) both; }
 .s0-tr:not(.s0-th):hover { background: rgba(24, 133, 255, 0.07); }
 .s0-th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--s0-muted); animation: none; }
 @keyframes s0-row-in { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: none; } }
-.s0-tr > span:nth-child(3), .s0-tr > span:nth-child(4), .s0-tr > span:nth-child(5) { font-family: var(--s0-mono); font-size: 13px; }
+.s0-tr > span:nth-child(3), .s0-tr > span:nth-child(4), .s0-tr > span:nth-child(5), .s0-tr > span:nth-child(6) { font-family: var(--s0-mono); font-size: 13px; }
 .s0-rank { font-family: var(--s0-mono); color: var(--s0-muted); }
 .s0-rank.r1 { color: #ffd76a; } .s0-rank.r2 { color: #d9e2ef; } .s0-rank.r3 { color: #f0a96b; }
 .s0-name { font-weight: 600; display: flex; align-items: center; gap: 8px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -291,7 +291,7 @@ img { display: block; }
   .s0-stats { grid-template-columns: repeat(2, 1fr); }
   .s0-links { grid-template-columns: 1fr; }
   .s0-rules, .s0-perks { grid-template-columns: 1fr; }
-  .s0-tr { grid-template-columns: 36px 1fr auto; }
+  .s0-tr { grid-template-columns: 36px minmax(0, 1fr) auto auto; }
   .hide-sm { display: none; }
   .s0-count-cell { min-width: 0; flex: 1; }
   .s0-orbit-slot { --r: 140px; } .s0-orbit-card { width: 108px; left: -54px; padding: 8px 10px; } .s0-orbit-card strong, .s0-orbit-card em { font-size: 11px; } .s0-hero-visual { margin-bottom: 10px; }
