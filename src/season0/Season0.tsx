@@ -203,7 +203,7 @@ function StatStrip({ data, phase }: { data: SeasonData; phase: Phase }) {
   const best = data.board[0];
   const stats: { label: string; node: React.ReactNode; seed: number }[] = [
     { label: "Entries", node: <Counter value={data.entries} format={(v) => Math.round(v).toString()} />, seed: 13 },
-    { label: "Paper volume", node: data.totalVolume > 0 ? <Counter value={data.totalVolume} format={fmtUsd} /> : <span>$0</span>, seed: 26 },
+    { label: "Volume", node: data.totalVolume > 0 ? <Counter value={data.totalVolume} format={fmtUsd} /> : <span>$0</span>, seed: 26 },
     {
       label: best ? `Top · ${best.name}` : "Top return",
       node: best ? <span className={best.returnPct >= 0 ? "up" : "down"}>{fmtPct(best.returnPct)}</span> : <span>—</span>,
@@ -325,7 +325,7 @@ function Leaderboard({ data, phase }: { data: SeasonData; phase: Phase }) {
 
         <div className="s0-side">
           <Reveal className="s0-card s0-vol" delay={80}>
-            <span className="s0-stat-label">Paper volume</span>
+            <span className="s0-stat-label">Volume</span>
             <strong className="s0-big">{total > 0 ? <Counter value={total} format={fmtUsd} /> : "$0"}</strong>
             <ChartIllustration seed={29} />
             <p className="s0-mini">Rehearsal pace ≈ $12M/day from house agents</p>
